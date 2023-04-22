@@ -1,0 +1,54 @@
+{
+    "name": "@wallet-test-framework/glue",
+    "version": "0.1.0-dev",
+    "description": "Base types for automation glue between wallets and tests",
+    "license": "MIT",
+    "type": "module",
+    "exports": {
+        ".": {
+            "browser": "./dist/index.js"
+        }
+    },
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "fmt": "prettier --write .",
+        "build": "node ./Build.js && tsc -d --emitDeclarationOnly",
+        "test": "prettier --check . && eslint . && npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wallet-test-framework/glue.git"
+    },
+    "contributors": [
+        {
+            "name": "Nikki Gaudreau",
+            "url": "https://twitter.com/gaudren_",
+            "email": "nikki@binarycake.ca"
+        },
+        {
+            "name": "Sam Wilson",
+            "url": "https://twitter.com/_SamWilsn_",
+            "email": "sam@binarycake.ca"
+        }
+    ],
+    "bugs": {
+        "url": "https://github.com/wallet-test-framework/glue/issues"
+    },
+    "homepage": "https://wtf.allwallet.dev/",
+    "devDependencies": {
+        "@jgoz/esbuild-plugin-typecheck": "^3.0.2",
+        "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+        "@tsconfig/recommended": "^1.0.2",
+        "@typescript-eslint/eslint-plugin": "5.57.1",
+        "@typescript-eslint/parser": "^5.57.1",
+        "esbuild": "0.17.15",
+        "eslint": "8.37.0",
+        "eslint-config-prettier": "^8.8.0",
+        "nanoevents": "^7.0.1",
+        "prettier": "2.8.7",
+        "typescript": "^5.0.4"
+    }
+}
