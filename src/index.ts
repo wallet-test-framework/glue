@@ -9,14 +9,17 @@ export abstract class Glue {
         type: E
     ): Promise<Parameters<EventMap[E]>[0]> {
         return await new Promise((res, rej) => {
-            const unsubscribe = this.on(type, (...args) => {
-                unsubscribe();
-                try {
-                    res(args[0]);
-                } catch (e: unknown) {
-                    rej(e);
+            const unsubscribe = this.on(
+                type,
+                (arg: Parameters<EventMap[E]>[0]) => {
+                    unsubscribe();
+                    try {
+                        res(arg);
+                    } catch (e: unknown) {
+                        rej(e);
+                    }
                 }
-            });
+            );
         });
     }
 
@@ -38,6 +41,15 @@ export abstract class Glue {
     public abstract requestAccounts(
         action: actions.RequestAccounts
     ): Promise<void>;
+    public abstract switchEthereumChain(
+        action: actions.SwitchEthereumChain
+    ): Promise<void>;
+
+    public addEthereumChain(_action: actions.AddEthereumChain): Promise<void> {
+        return Promise.reject(
+            new TypeError("glue does not support addEthereumChain")
+        );
+    }
 }
 
 export type { Unsubscribe } from "nanoevents";

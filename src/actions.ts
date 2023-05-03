@@ -20,3 +20,7 @@ export interface ApproveAccounts extends Approve {
 }
 
 export type RequestAccounts = Reject | ApproveAccounts;
+
+export type AddEthereumChain = Reject | Approve;
+
+export type SwitchEthereumChain = Reject | Approve;
