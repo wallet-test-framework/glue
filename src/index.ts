@@ -1,6 +1,8 @@
 import * as actions from "./actions";
 import { EventMap } from "./events";
-import { Unsubscribe, createNanoEvents } from "nanoevents";
+import { createNanoEvents } from "nanoevents";
+
+export type Unsubscribe = () => void;
 
 export abstract class Glue {
     private readonly emitter = createNanoEvents<EventMap>();
@@ -52,6 +54,5 @@ export abstract class Glue {
     }
 }
 
-export type { Unsubscribe } from "nanoevents";
 export * from "./events";
 export * from "./actions";
