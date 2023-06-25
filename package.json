@@ -1,13 +1,11 @@
 {
     "name": "@wallet-test-framework/glue",
-    "version": "0.4.0-dev",
+    "version": "0.4.1-dev",
     "description": "Base types for automation glue between wallets and tests",
     "license": "MIT",
     "type": "module",
     "exports": {
-        ".": {
-            "browser": "./dist/index.js"
-        }
+        ".": "./dist/index.js"
     },
     "types": "./dist/index.d.ts",
     "files": [
