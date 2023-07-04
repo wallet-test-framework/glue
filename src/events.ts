@@ -88,8 +88,22 @@ export class RequestAccountsEvent
     }
 }
 
+interface SignMessage {
+    message: string;
+}
+
+export class SignMessageEvent extends ReplyEvent implements SignMessage {
+    public readonly message: string;
+
+    constructor(id: string, options: SignMessage) {
+        super("signmessage", id);
+        this.message = options.message;
+    }
+}
+
 export interface EventMap {
     requestaccounts: (ev: RequestAccountsEvent) => unknown;
+    signmessage: (ev: SignMessageEvent) => unknown;
     addethereumchain: (ev: AddEthereumChainEvent) => unknown;
     switchethereumchain: (ev: SwitchEthereumChainEvent) => unknown;
 }

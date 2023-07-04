@@ -43,6 +43,7 @@ export abstract class Glue {
     public abstract requestAccounts(
         action: actions.RequestAccounts
     ): Promise<void>;
+    public abstract signMessage(action: actions.SignMessage): Promise<void>;
     public abstract switchEthereumChain(
         action: actions.SwitchEthereumChain
     ): Promise<void>;
