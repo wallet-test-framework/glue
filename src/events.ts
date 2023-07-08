@@ -101,9 +101,35 @@ export class SignMessageEvent extends ReplyEvent implements SignMessage {
     }
 }
 
+interface SendTransaction {
+    from: string;
+    to: string;
+    data: string;
+    value: string;
+}
+
+export class SendTransactionEvent
+    extends ReplyEvent
+    implements SendTransaction
+{
+    public readonly from: string;
+    public readonly to: string;
+    public readonly data: string;
+    public readonly value: string;
+
+    constructor(id: string, options: SendTransaction) {
+        super("sendtransaction", id);
+        this.from = options.from;
+        this.to = options.to;
+        this.data = options.data;
+        this.value = options.value;
+    }
+}
+
 export interface EventMap {
     requestaccounts: (ev: RequestAccountsEvent) => unknown;
     signmessage: (ev: SignMessageEvent) => unknown;
+    sendtransaction: (ev: SendTransactionEvent) => unknown;
     addethereumchain: (ev: AddEthereumChainEvent) => unknown;
     switchethereumchain: (ev: SwitchEthereumChainEvent) => unknown;
 }

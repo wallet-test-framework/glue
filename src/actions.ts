@@ -21,6 +21,8 @@ export interface ApproveAccounts extends Approve {
 
 export type SignMessage = Reject | Approve;
 
+export type SendTransaction = Reject | Approve;
+
 export type RequestAccounts = Reject | ApproveAccounts;
 
 export type AddEthereumChain = Reject | Approve;
