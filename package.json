@@ -37,16 +37,16 @@
     },
     "homepage": "https://wtf.allwallet.dev/",
     "devDependencies": {
-        "@jgoz/esbuild-plugin-typecheck": "^3.0.2",
-        "@trivago/prettier-plugin-sort-imports": "^4.1.1",
-        "@tsconfig/recommended": "^1.0.2",
-        "@typescript-eslint/eslint-plugin": "5.57.1",
-        "@typescript-eslint/parser": "^5.57.1",
-        "esbuild": "0.17.15",
-        "eslint": "8.37.0",
-        "eslint-config-prettier": "^8.8.0",
-        "nanoevents": "^7.0.1",
-        "prettier": "2.8.7",
-        "typescript": "^5.0.4"
+        "@jgoz/esbuild-plugin-typecheck": "^3.1.0",
+        "@trivago/prettier-plugin-sort-imports": "^4.2.1",
+        "@tsconfig/recommended": "^1.0.3",
+        "@typescript-eslint/eslint-plugin": "6.9.0",
+        "@typescript-eslint/parser": "^6.9.0",
+        "esbuild": "0.19.5",
+        "eslint": "8.52.0",
+        "eslint-config-prettier": "^9.0.0",
+        "nanoevents": "^8.0.0",
+        "prettier": "3.0.3",
+        "typescript": "^5.2.2"
     }
 }
