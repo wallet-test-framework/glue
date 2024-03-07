@@ -30,3 +30,8 @@ export type RequestAccounts = Reject | ApproveAccounts;
 export type AddEthereumChain = Reject | Approve;
 
 export type SwitchEthereumChain = Reject | Approve;
+
+export interface Report {
+    format: string;
+    value: Exclude<unknown, null | undefined>;
+}

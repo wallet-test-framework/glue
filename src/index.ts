@@ -53,6 +53,7 @@ export abstract class Glue {
     public abstract switchEthereumChain(
         action: actions.SwitchEthereumChain,
     ): Promise<void>;
+    public abstract report(action: actions.Report): Promise<void>;
 
     public addEthereumChain(_action: actions.AddEthereumChain): Promise<void> {
         return Promise.reject(
